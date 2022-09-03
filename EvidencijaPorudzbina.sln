@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvidencijaPorudzbina.UI", "EvidencijaPorudzbina.UI\EvidencijaPorudzbina.UI.csproj", "{38702360-F1AE-4884-AF83-5EB018AA3DF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvidencijaPorudzbina.PristupBaziPodataka", "EvidencijaPorudzbina.PristupBaziPodataka\EvidencijaPorudzbina.PristupBaziPodataka.csproj", "{1AA746E1-2481-4B17-BBE4-865187F7388F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38702360-F1AE-4884-AF83-5EB018AA3DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38702360-F1AE-4884-AF83-5EB018AA3DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38702360-F1AE-4884-AF83-5EB018AA3DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38702360-F1AE-4884-AF83-5EB018AA3DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AA746E1-2481-4B17-BBE4-865187F7388F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA746E1-2481-4B17-BBE4-865187F7388F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA746E1-2481-4B17-BBE4-865187F7388F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA746E1-2481-4B17-BBE4-865187F7388F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2973818-0153-417E-A19A-32643C534742}
+	EndGlobalSection
+EndGlobal
