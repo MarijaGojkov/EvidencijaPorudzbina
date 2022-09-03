@@ -17,10 +17,12 @@ namespace EvidencijaPorudzbina.UI.ViewModels
 
             #region Register Views
             SimpleIoc.Default.Register<GlavniProzorViewModel>();
+            SimpleIoc.Default.Register<DodavanjePorudzbinaViewModel>();
             #endregion
         }
 
         public GlavniProzorViewModel GlavniProzorView => ServiceLocator.Current.GetInstance<GlavniProzorViewModel>();
+        public DodavanjePorudzbinaViewModel DodavanjeView => ServiceLocator.Current.GetInstance<DodavanjePorudzbinaViewModel>();
 
         public static void Cleanup() { }
     }

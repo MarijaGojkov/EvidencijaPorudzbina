@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EvidencijaPorudzbina.PristupBaziPodataka.Modeli;
 
 namespace EvidencijaPorudzbina.PristupBaziPodataka.Repozitorijumi
 {
@@ -11,8 +7,10 @@ namespace EvidencijaPorudzbina.PristupBaziPodataka.Repozitorijumi
         Modeli.Porudzbina UzmiPorudzbinuPoId(int id);
         List<Modeli.Porudzbina> GetAllPorudzbine();
         List<Modeli.Porudzbina> PretragaPorudzbina(string pretraga);
-        Modeli.Porudzbina Delete(int id);
-        int Add(Modeli.Porudzbina porudzbina);
-        int Update(Modeli.Porudzbina porudzbina);
+        void ObrisiPorudzbinuPoId(int id);
+        int DodajPorudzbinu(Modeli.Porudzbina porudzbina);
+        void IzmeniPorudzbinu(Modeli.Porudzbina porudzbina);
+        void IzmeniStanjePorudzbine(int id, int idStanja);
+        List<StanjePorudzbine> UzmiStanjaPorudzbine();
     }
 }

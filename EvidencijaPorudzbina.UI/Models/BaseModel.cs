@@ -6,6 +6,6 @@ namespace EvidencijaPorudzbina.UI.Models
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public string Title { get; set; }
+        public string NazivProzora { get; set; }
     }
 }

@@ -5,10 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EvidencijaPorudzbina.UI.Views"
         mc:Ignorable="d"
-        Title="GlavniProzor" Height="450" Width="800"
+        Title="GlavniProzor" Height="550" Width="1000"
         DataContext="{Binding GlavniProzorView, Source={StaticResource Locator}}">
     <Grid>
-        <DataGrid ItemsSource="{Binding Model.Porudzbine}" SelectedItem="{Binding Model.IzabranaPorudzbina}" FontSize="15" IsSynchronizedWithCurrentItem="True" Name="GridExkskurzija" Grid.Row="0" Grid.Column="0" AutoGenerateColumns="False" CanUserAddRows="False">
+        <DataGrid ItemsSource="{Binding Model.Porudzbine}" SelectedItem="{Binding Model.IzabranaPorudzbina}" FontSize="15" IsSynchronizedWithCurrentItem="True" Name="GridExkskurzija" Grid.Row="0" Grid.Column="0" AutoGenerateColumns="False" CanUserAddRows="False" RenderTransformOrigin="0.5,0.5" Margin="0,69,177,0">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.295"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding StanjePorudzbine}" Value="OTKAZANO">
+                            <Setter Property="Background" Value="Red"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding StanjePorudzbine}" Value="NOVO">
+                            <Setter Property="Background" Value="Green"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding StanjePorudzbine}" Value="DOSTAVLJENO">
+                            <Setter Property="Background" Value="Blue"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding StanjePorudzbine}" Value="PREUZETO">
+                            <Setter Property="Background" Value="GreenYellow"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Dostavljac" IsReadOnly="true" Binding="{Binding Dostavljac }" Width="1.5*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Porudzbina" IsReadOnly="true" Binding="{Binding Proizvod}" Width="1.5*"></DataGridTextColumn>
@@ -18,5 +44,13 @@
                 <DataGridTextColumn Header="Datum porucivanja" IsReadOnly="true" Binding="{Binding DatumPorucivanja}" Width="1.5*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Pretraga" Command="{Binding PretragaKomanda}" HorizontalAlignment="Left" Margin="741,39,0,0" VerticalAlignment="Top"/>
+        <Button Content="Dodaj novu porudzbinu" Command="{Binding DodavanjePorudzbineKomanda}" HorizontalAlignment="Left" Margin="840,78,0,0" VerticalAlignment="Top" Height="30" Width="130"/>
+        <Button Content="Izmeni informacije porudzbine" Command="{Binding IzmeniPorudzbinuKomanda}" HorizontalAlignment="Left" Margin="838,127,0,0" VerticalAlignment="Top" Width="130" Height="23"/>
+        <Button Content="Obrisi porudzbinu" Command="{Binding ObrisiPorudzbinuKomanda}" HorizontalAlignment="Left" Margin="840,198,0,0" VerticalAlignment="Top" Width="149"/>
+        <Button Content="Exportuj porudzbinu u XML" Command="{Binding EksportXMLKomanda}" HorizontalAlignment="Left" Margin="840,474,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="71,23,0,0" TextWrapping="Wrap" Text="{Binding Model.Pretraga, Mode=TwoWay}" VerticalAlignment="Top" Width="606" Height="26"/>
+        <ComboBox Text="{Binding Model.StanjePorudzbine}" ItemsSource="{Binding Path=Model.StanjaPoruzdbine}" DisplayMemberPath="Stanje" SelectedValuePath="Id" FontSize="15" SelectedValue="{Binding Model.IdStanja}" HorizontalAlignment="Left" Margin="848,289,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Izmeni Stanje" Command="{Binding IzmeniStanjePorudzbineKomanda}" HorizontalAlignment="Left" Margin="848,0,0,0" VerticalAlignment="Center"/>
     </Grid>
 </Window>
